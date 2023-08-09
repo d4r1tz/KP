@@ -2,6 +2,17 @@
     include 'layout.php';
     include_once 'config.php';
     $id_get = $_GET['Traffic_ID'];
+    if(isset($_POST['Submit'])) {
+        $id_post = $_POST['Traffic_ID'];
+        $MMSI_post = $_POST['MMSI'];
+        $Last_port_post = $_POST['Last_port'];
+        $Next_port_post = $_POST['Next_port'];
+        $ETD_post = $_POST['ETD'];
+        $ETA_post = $_POST['ETA'];
+        $Draught_post = $_POST['Draught'];
+        $result_post = mysqli_query($mysqli, "update `traffic` set `MMSI` = $MMSI_post, `Last_port` = '$Last_port_post', `Next_port` = '$Next_port_post',`ETD` = '$ETD_post', `ETA` = '$ETA_post', `Draught` = $Draught_post where `traffic`.`Traffic_ID` = $id_post");
+        header("Location: index.php");
+    }
     $data = mysqli_query($mysqli, "SELECT * FROM traffic WHERE `traffic`.`Traffic_ID` = $id_get");
     while($data2 = mysqli_fetch_array($data)) {
         $id = $data2['Traffic_ID'];
@@ -17,17 +28,6 @@
 ?>
 
 <?php
-    if(isset($_POST['Submit'])) {
-        $id_post = $_POST['Traffic_ID'];
-        $MMSI_post = $_POST['MMSI'];
-        $Last_port_post = $_POST['Last_port'];
-        $Next_port_post = $_POST['Next_port'];
-        $ETD_post = $_POST['ETD'];
-        $ETA_post = $_POST['ETA'];
-        $Draught_post = $_POST['Draught'];
-        $result_post = mysqli_query($mysqli, "update `traffic` set `MMSI` = $MMSI_post, `Last_port` = '$Last_port_post', `Next_port` = '$Next_port_post',`ETD` = '$ETD_post', `ETA` = '$ETA_post', `Draught` = $Draught_post where `traffic`.`Traffic_ID` = $id_post");
-        header("Location: index.php");
-    }
 ?>
 
 <html>
