@@ -53,8 +53,9 @@
 					</div>
 				</div>
 			</div>
-			<table class="table table-hover mt-2">
-    			<thead>
+			<div class="table-responsive">
+				<table class="table table-hover mt-2">
+					<thead>
 					<tr>
 						<th>MMSI</th>
 						<th>Nama Kapal</th>
@@ -70,7 +71,8 @@
 						<th>Action</th>
 					</tr>
 				</thead>
-
+			</div>
+				
 				<tbody>
 					<?php
 						while($traffic = mysqli_fetch_array($result)) {
