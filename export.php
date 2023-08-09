@@ -77,7 +77,7 @@
       <tr>
         <?php
           $con = mysqli_connect('localhost','root','','kp_projek');
-          if ($last_date > $first_date) {
+          if ($last_date >= $first_date) {
             $result = mysqli_query($con, "SELECT k.MMSI, k.Nama_kapal, k.Call_sign, k.IMO, k.Length, k.Width, t.Last_port, t.Next_port, t.ETD, t.ETA, t.Draught, t.Traffic_ID FROM kapal k inner join traffic t on k.MMSI=t.MMSI where t.input_date <= '".$last_date."' AND t.input_date >= '".$first_date."';");
           }
           else {
