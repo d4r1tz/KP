@@ -7,7 +7,7 @@
 
 <html>
     <head>
-        <title>ADD LOGBOOK kk</title>
+        <title>ADD LOGBOOK</title>
     </head>
     
     <body>
