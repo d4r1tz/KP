@@ -17,13 +17,13 @@
     while($data2 = mysqli_fetch_array($data)) {
         $id = $data2['Traffic_ID'];
         $MMSI_get = $data2['MMSI'];
+        $kapal = mysqli_query($mysqli, "SELECT Nama_kapal FROM kapal WHERE MMSI = $MMSI_get");
         $Last_port_get = $data2['Last_port'];
         $Next_port_get = $data2['Next_port'];
         $ETD_get = $data2['ETD'];
         $ETA_get = $data2['ETA'];
         $Draught_get = $data2['Draught'];
     }
-    $kapal = mysqli_query($mysqli, "SELECT Nama_kapal FROM kapal WHERE MMSI = $MMSI_get");
     while($data3 = mysqli_fetch_array($kapal)) {$vesselName = $data3['Nama_kapal'];}
 ?>
 
@@ -78,14 +78,14 @@
                         <div style="display:flex; align-items:flex-start;">
                             <div class="mb-3">
                                 <label for="ETD" class="form-label">ETD</label>
-                                <input type="datetime-local" class="form-control" name="ETD" style="width:320px"  value=<?php echo $ETD_get; ?> required>
+                                <input type="datetime-local" class="form-control" name="ETD" style="width:320px"  value="<?php echo $ETD_get; ?>" required>
                             </div>
 
                             <div style="padding: 0px 20px 0px;"></div>
                     
                             <div class="mb-3">
                                 <label for="ETA" class="form-label">ETA</label>
-                                <input type="datetime-local" class="form-control"name="ETA" style="width:320px" value=<?php echo $ETA_get; ?> required>
+                                <input type="datetime-local" class="form-control"name="ETA" style="width:320px" value="<?php echo $ETA_get; ?>" required>
                             </div>
                         </div>
 
@@ -111,7 +111,7 @@
                 else {
                     var xmlhttp = new XMLHttpRequest();
                     xmlhttp.onreadystatechange = function () {
-                        if (this.readyState == 4 &&  this.status == 200) {
+                        if (this.readyState == 4 && this.status == 200) {
                             var myObj = JSON.parse(this.responseText);
                             document.getElementById("Nama_kapal").value = myObj[0];
                         }
