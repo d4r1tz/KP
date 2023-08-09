@@ -83,8 +83,8 @@
 							echo "<td>".$traffic['Width']."</td>";
 							echo "<td>".$traffic['Last_port']."</td>";
 							echo "<td>".$traffic['Next_port']."</td>";
-							echo "<td>".$traffic['ETD']."</td>";
-							echo "<td>".$traffic['ETA']."</td>";
+							echo "<td>".date_format(date_create($traffic['ETD']),"d-m-Y H:i")."</td>";
+							echo "<td>".date_format(date_create($traffic['ETA']),"d-m-Y H:i")."</td>";
 							echo "<td>".$traffic['Draught']."</td>";
 							echo "<td>"."<a href='edit.php?Traffic_ID=$traffic[Traffic_ID]' type='button' class='btn btn-warning rounded-3'>Ubah</a> <a href='delete.php?Traffic_ID=$traffic[Traffic_ID]' type='button' class='btn btn-danger' >Hapus</button>"."</td>";
 							echo "</tr>";
