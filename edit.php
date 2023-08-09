@@ -17,13 +17,13 @@
     while($data2 = mysqli_fetch_array($data)) {
         $id = $data2['Traffic_ID'];
         $MMSI_get = $data2['MMSI'];
+        $kapal = mysqli_query($mysqli, "SELECT Nama_kapal FROM kapal WHERE MMSI = $MMSI_get");
         $Last_port_get = $data2['Last_port'];
         $Next_port_get = $data2['Next_port'];
         $ETD_get = $data2['ETD'];
         $ETA_get = $data2['ETA'];
         $Draught_get = $data2['Draught'];
     }
-    $kapal = mysqli_query($mysqli, "SELECT Nama_kapal FROM kapal WHERE MMSI = $MMSI_get");
     while($data3 = mysqli_fetch_array($kapal)) {$vesselName = $data3['Nama_kapal'];}
 ?>
 
@@ -111,7 +111,7 @@
                 else {
                     var xmlhttp = new XMLHttpRequest();
                     xmlhttp.onreadystatechange = function () {
-                        if (this.readyState == 4 &&  this.status == 200) {
+                        if (this.readyState == 4 && this.status == 200) {
                             var myObj = JSON.parse(this.responseText);
                             document.getElementById("Nama_kapal").value = myObj[0];
                         }
