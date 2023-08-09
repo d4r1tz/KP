@@ -15,7 +15,7 @@
                     <h5 class="card-title fw-bolder mb-3">Tambah Data Kapal</h5>
                     <form action="addKapal.php" method="post" name="form1">
                         <div style="display:flex; align-items:flex-start;">
-                            <div class="mb-3"> <!-- NEED ERROR HANDLING -->
+                            <div class="mb-3">
                                 <label for="MMSI" class="form-label">MMSI</label>
                                 <div class="col-md-3">
                                     <input id="MMSI" name="MMSI" style="width:320px" 
@@ -63,7 +63,7 @@
 
                             <div class="mb-3">
                                 <label for="Width" class="form-label">Beam</label>
-                                <input type="number" step="0.1" class="form-control"id="Width" name="Width" style="width:320px" nullable>
+                                <input type="number" step="0.01" class="form-control"id="Width" name="Width" style="width:320px" nullable>
                             </div>
                         </div>
 

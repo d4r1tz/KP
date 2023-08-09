@@ -28,6 +28,8 @@
 				<a href="add.php" type="button" class="btn btn-success rounded-3" style="width:130px;">Tambah Data</a>
 				<div style="padding:0px 10px 0px;"></div>
 				<button type="button" class="btn btn-export" data-bs-toggle="modal" data-bs-target="#exportModal" style="width:130px;">Export</button>
+				<div style="padding:0px 10px 0px;"></div>
+				<a type="button" href="exportOneDay.php" class="btn btn-export" style="width:130px;">Export Today's Data</a>
 				<div class="modal fade" id="exportModal" tabindex="-1" aria-labelledby="hapusModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
@@ -39,11 +41,11 @@
 								<div class="modal-body">Masukkan range tanggal input data yang ingin di-export</div>
 								<div class="mb-3" style="padding-left:20px;">
 									<label for="first_date" class="form-label">Tanggal Awal</label>
-                            		<input type="date" class="form-control" id="first_date" name="first_date" style="width:320px" required>
+                            		<input type="date"  class="form-control" id="first_date" name="first_date" style="width:320px" required>
 								</div>
 								<div class="mb-3" style="padding-left:20px;">
 									<label for="last_date" class="form-label">Tanggal Akhir</label>
-                            		<input type="date" class="form-control" id="last_date" name="last_date" style="width:320px" required>
+                            		<input type="date"  class="form-control" id="last_date" name="last_date" style="width:320px" required>
 								</div>
 								<div class="modal-footer">
 									<button type="submit" name="submit_date_range" class="btn btn-primary">Submit</button>
