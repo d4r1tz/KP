@@ -45,7 +45,7 @@
                     <h5 class="card-title fw-bolder mb-3">Edit Data Kapal</h5>
                     <form action="editKapal.php" method="post" name="update_kapal">
                         <div style="display:flex; align-items:flex-start;">
-                            <div class="mb-3"> <!-- NEED ERROR HANDLING -->
+                            <div class="mb-3">
                                 <label for="MMSI" class="form-label">MMSI</label>
                                 <div class="col-md-3">
                                     <input id="MMSI" name="MMSI" type="number" class="form-control" style="width:320px" value=<?php echo $old_MMSI_get; ?> 

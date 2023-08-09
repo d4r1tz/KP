@@ -16,7 +16,6 @@
   $dewan1 = $mysqli->prepare($query);
   $dewan1->execute();
   $res1 = $dewan1->get_result();
-//  $res1 = mysqli_query($mysqli, $query);
 
   $output .= '
   <meta charset="utf-8">
@@ -40,21 +39,6 @@
         </tr>
   ';
 
-  /*while($kapal = mysqli_fetch_array($result)) {
-    $output .= '
-    <tr>
-         <td>' . $row["MMSI"] . '</td>
-         <td>' . $row["Nama Kapal"] . '</td>
-         <td>' . $row["Call Sign"] . '</td>
-         <td>' . $row["IMO"] . '</td>
-         <td>' . $row["Type"] . '</td>
-         <td>' . $row["GT"] . '</td>
-         <td>' . $row["Length"] . '</td>
-         <td>' . $row["Beam"] . '</td>
-         <td>' . $row["Flag"] . '</td>
-    </tr>
-    ';
-  }*/
   while ($kapal = $res1->fetch_assoc()) {
       $output .= '
       <tr>

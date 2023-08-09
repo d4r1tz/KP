@@ -17,10 +17,8 @@ if (!isset($_SESSION['loggedin'])) {
         <title>DISNAV SMG</title>
         <link rel = "icon" href = "https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200X200.png" type = "image/x-icon">
 
-        <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         
-        <!-- Styles -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
         
         <style>body {font-family: 'Nunito'; font-size: 14px;}</style>
@@ -34,7 +32,6 @@ if (!isset($_SESSION['loggedin'])) {
             </div>
         </nav>
         
-        <!-- SIDE NAVBAR -->
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <a href="index.php">Logbook Pelayaran</a>
@@ -42,17 +39,13 @@ if (!isset($_SESSION['loggedin'])) {
                 <a href="logout.php">Log Out</a>
             </div>
 
-            <!-- Use any element to open the sidenav -->
             <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; MENU</span>
          
-            <!-- Script Sidebar -->
             <script>
-                /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
                 function openNav() {
                     document.getElementById("mySidenav").style.width = "300px";
                 }
 
-                /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
                 function closeNav() {
                     document.getElementById("mySidenav").style.width = "0";
                 }

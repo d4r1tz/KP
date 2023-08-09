@@ -1,4 +1,3 @@
-<!-- PHP Config -->
 <?php
 	include 'layout.php';
 	include_once("config.php");
@@ -8,17 +7,13 @@
 	}else{
 		$result = mysqli_query($mysqli, "SELECT k.MMSI, k.Nama_kapal, k.Call_sign, k.IMO, k.Length, k.Width, t.Last_port, t.Next_port, t.ETD, t.ETA, t.Draught, t.Traffic_ID FROM kapal k inner join traffic t on k.MMSI=t.MMSI order by k.MMSI ASC");		
 	}
-	//$result = mysqli_query($mysqli, "SELECT k.MMSI, k.Nama_kapal, k.Call_sign, k.IMO, k.Length, k.Width, t.Last_port, t.Next_port, t.ETD, t.ETA, t.Draught, t.Traffic_ID FROM kapal k inner join traffic t on k.MMSI=t.MMSI order by k.MMSI ASC");
 ?>
 
-<!-- Design HTML -->
 <html>
 	<link rel="stylesheet" href="button.css">
-	<!-- Design Head -->
 	<head>
 		<title>DISNAV SMG</title>
 	</head>
-	<!-- Design Body -->
 	<body>
 		<div class="container">
 			<h4 class="mt-5">LOGBOOK PELAYARAN</h4>
@@ -57,7 +52,6 @@
 						</div>
 					</div>
 				</div>
-				<!--<a href="export.php" type="button" class="btn btn-export" style="width:130px;">Export</a> -->
 			</div>
 			<table class="table table-hover mt-2">
     			<thead>

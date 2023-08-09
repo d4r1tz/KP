@@ -1,4 +1,3 @@
-<!-- PHP Config -->
 <?php
 	include 'layout.php';
 	include_once("config.php");
@@ -11,15 +10,12 @@
 	}
 ?>
 
-<!-- Design HTML -->
 <html>
-	<!-- Design Head -->
 	<head>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<title>DISNAV SMG</title>
 	</head>
-	<!-- Design Body -->
 	<body>
 		<div class="container">
 			<h4 class="mt-5">DATA KAPAL</h4>

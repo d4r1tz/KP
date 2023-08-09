@@ -105,47 +105,23 @@
             </div>
         </div>
         <script>
-  
-        // onkeyup event will occur when the user 
-        // release the key and calls the function
-        // assigned to this event
-        function GetDetail(str) {
-            if (str.length != 9) {
-                document.getElementById("Nama_kapal").value = "";
-                return;
+            function GetDetail(str) {
+                if (str.length != 9) {
+                    document.getElementById("Nama_kapal").value = "";
+                    return;
+                }
+                else {
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 &&  this.status == 200) {
+                            var myObj = JSON.parse(this.responseText);
+                            document.getElementById("Nama_kapal").value = myObj[0];
+                        }
+                    };
+                    xmlhttp.open("GET", "controller.php?MMSI=" + str, true);
+                    xmlhttp.send();
+                }
             }
-            else {
-  
-                // Creates a new XMLHttpRequest object
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function () {
-  
-                    // Defines a function to be called when
-                    // the readyState property changes
-                    if (this.readyState == 4 && 
-                            this.status == 200) {
-                          
-                        // Typical action to be performed
-                        // when the document is ready
-                        var myObj = JSON.parse(this.responseText);
-  
-                        // Returns the response data as a
-                        // string and store this array in
-                        // a variable assign the value 
-                        // received to first name input field
-                          
-                        document.getElementById
-                            ("Nama_kapal").value = myObj[0];
-                    }
-                };
-  
-                // xhttp.open("GET", "filename", true);
-                xmlhttp.open("GET", "controller.php?MMSI=" + str, true);
-                  
-                // Sends the request to the server
-                xmlhttp.send();
-            }
-        }
-    </script>
+        </script>
     </body>
 </html>
