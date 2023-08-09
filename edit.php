@@ -78,14 +78,14 @@
                         <div style="display:flex; align-items:flex-start;">
                             <div class="mb-3">
                                 <label for="ETD" class="form-label">ETD</label>
-                                <input type="datetime-local" class="form-control" name="ETD" style="width:320px"  value=<?php echo $ETD_get; ?> required>
+                                <input type="datetime-local" class="form-control" name="ETD" style="width:320px"  value="<?php echo $ETD_get; ?>" required>
                             </div>
 
                             <div style="padding: 0px 20px 0px;"></div>
                     
                             <div class="mb-3">
                                 <label for="ETA" class="form-label">ETA</label>
-                                <input type="datetime-local" class="form-control"name="ETA" style="width:320px" value=<?php echo $ETA_get; ?> required>
+                                <input type="datetime-local" class="form-control"name="ETA" style="width:320px" value="<?php echo $ETA_get; ?>" required>
                             </div>
                         </div>
 
