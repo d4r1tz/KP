@@ -27,8 +27,6 @@
     while($data3 = mysqli_fetch_array($kapal)) {$vesselName = $data3['Nama_kapal'];}
 ?>
 
-<?php
-?>
 
 <html>
     <head>

@@ -2,21 +2,6 @@
     include 'layout.php';
     include_once 'config.php';
     $old_MMSI_get = $_GET['MMSI'];
-    $data = mysqli_query($mysqli, "SELECT * FROM kapal WHERE `kapal`.`MMSI` = $old_MMSI_get");
-    while($data2 = mysqli_fetch_array($data)) {
-        $old_MMSI_get = $data2['MMSI'];
-        $Nama_kapal_get = $data2['Nama_kapal'];
-        $Call_sign_get = $data2['Call_sign'];
-        $IMO_get = $data2['IMO'];
-        $Tipe_kapal_get = $data2['Tipe_kapal'];
-        $Gross_tonnage_get = $data2['Gross_tonnage'];
-        $Length_get = $data2['Length'];
-        $Width_get = $data2['Width'];
-        $Flag_get = $data2['Flag'];
-    }
-?>
-
-<?php
     if(isset($_POST['Submit'])) {
         $old_MMSI_post = $_POST['old_MMSI'];
         $MMSI_post = $_POST['MMSI'];
@@ -31,7 +16,20 @@
         $result_post = mysqli_query($mysqli, "update `kapal` set `MMSI` = $MMSI_post, `Nama_kapal` = '$Nama_kapal_post', `Call_sign` = '$Call_sign_post', `IMO` = $IMO_post, `Tipe_kapal` = '$Tipe_kapal_post', `Gross_tonnage` = $Gross_tonnage_post, `Length` = $Length_post, `Width` = $Width_post, `Flag` = '$Flag_post' where `kapal`.`MMSI` = $old_MMSI_post");
         header("Location: indexKapal.php");
     }
+    $data = mysqli_query($mysqli, "SELECT * FROM kapal WHERE `kapal`.`MMSI` = $old_MMSI_get");
+    while($data2 = mysqli_fetch_array($data)) {
+        $old_MMSI_get = $data2['MMSI'];
+        $Nama_kapal_get = $data2['Nama_kapal'];
+        $Call_sign_get = $data2['Call_sign'];
+        $IMO_get = $data2['IMO'];
+        $Tipe_kapal_get = $data2['Tipe_kapal'];
+        $Gross_tonnage_get = $data2['Gross_tonnage'];
+        $Length_get = $data2['Length'];
+        $Width_get = $data2['Width'];
+        $Flag_get = $data2['Flag'];
+    }
 ?>
+
 
 <html>
     <head>

@@ -9,10 +9,15 @@
     $order = 'desc';
   }
  
+  $query = "SELECT * FROM kapal";
   $nama_kolom = $_POST["nama_kolom"];
   $orderby = $_POST["order"];
- 
-  $query = "SELECT * FROM kapal ORDER BY ". $nama_kolom ." ". $orderby ."";
+  $search = $_POST["search"];
+  if (!empty($search)) {
+    $query .= " WHERE Nama_kapal LIKE '%$search%'";
+  }
+
+  $query .=  " ORDER BY ". $nama_kolom ." ". $orderby ."";
   $dewan1 = $mysqli->prepare($query);
   $dewan1->execute();
   $res1 = $dewan1->get_result();

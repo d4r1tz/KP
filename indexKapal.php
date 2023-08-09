@@ -90,7 +90,7 @@
 					$.ajax({
 						url:"sort.php",
 						method:"POST",
-						data:{nama_kolom:nama_kolom, order:order},
+						data:{nama_kolom:nama_kolom, order:order, search:'<?php echo isset($_GET["search"]) ? $_GET["search"] : "" ?>'},
 						success:function(data)
 						{
 							$('#tabel_karyawam').html(data);
