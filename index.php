@@ -70,13 +70,18 @@
 						<th>ETD</th>
 						<th>ETA</th>
 						<th>Draught</th>
-						<th>Action</th>
+						<?php $username = $_SESSION['usertype'];
+							if($username === "admin"){
+							echo "<th>Action</th>";
+						}
+						?>
 					</tr>
 				</thead>
 			</div>
 				
 				<tbody>
 					<?php
+					$username = $_SESSION['usertype'];
 						while($traffic = mysqli_fetch_array($result)) {
 							echo "<tr>";
 							echo "<td>".$traffic['MMSI']."</td>";
@@ -90,7 +95,10 @@
 							echo "<td>".date_format(date_create($traffic['ETD']),"d-m-Y H:i")."</td>";
 							echo "<td>".date_format(date_create($traffic['ETA']),"d-m-Y H:i")."</td>";
 							echo "<td>".$traffic['Draught']."</td>";
-							echo "<td>"."<a href='edit.php?Traffic_ID=$traffic[Traffic_ID]' type='button' class='btn btn-warning rounded-3'>Ubah</a> <a href='delete.php?Traffic_ID=$traffic[Traffic_ID]' type='button' class='btn btn-danger' >Hapus</button>"."</td>";
+							echo $username;
+							if($username === "admin"){
+								echo "<td>"."<a href='edit.php?Traffic_ID=$traffic[Traffic_ID]' type='button' class='btn btn-warning rounded-3'>Ubah</a> <a href='delete.php?Traffic_ID=$traffic[Traffic_ID]' type='button' class='btn btn-danger' >Hapus</button>"."</td>";
+							}
 							echo "</tr>";
 						} 
 					?> 

@@ -19,6 +19,7 @@
                     session_regenerate_id();
                     $_SESSION['loggedin'] = TRUE;
                     $_SESSION['name'] = $_POST['username'];
+                    $_SESSION['usertype']= $username;
                     header('Location: index.php');
                 } else {
                     echo 'Username dan/atau password salah!';

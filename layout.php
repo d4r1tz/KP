@@ -1,9 +1,11 @@
 <?php
 session_start();
-if (!isset($_SESSION['loggedin'])) {
+if (!isset($_SESSION['usertype'])) {
     header('Location: login.php');
     exit;
 }
+//$username = $_SESSION['usertype'];
+
 ?>
 
 <!DOCTYPE html>
