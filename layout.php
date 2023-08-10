@@ -4,8 +4,6 @@ if (!isset($_SESSION['usertype'])) {
     header('Location: login.php');
     exit;
 }
-//$username = $_SESSION['usertype'];
-
 ?>
 
 <!DOCTYPE html>
